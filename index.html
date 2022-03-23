@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+  <meta charset="UTF-8">
+  <title>OCsonic's Terminal</title>
+  <link rel='stylesheet' href='https://unpkg.com/prismjs/themes/prism-coy.css'>
+<link rel='stylesheet' href='https://unpkg.com/jquery.terminal/css/jquery.terminal.css'>
+<link rel='stylesheet' href='https://unpkg.com/jsvi@0.1.0/vi.css'><link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
+<!-- partial:index.partial.html -->
+<div class="term"></div>
+<textarea class="vi" style="display: none"></textarea>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+<script src='https://cdn.jsdelivr.net/gh/jcubic/static@master/js/wcwidth.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js'></script>
+<script src='https://unpkg.com/js-polyfills/keyboard.js'></script>
+<script src='https://unpkg.com/jquery.terminal/js/unix_formatting.js'></script>
+<script src='https://unpkg.com/prismjs@1.8.1/prism.js'></script>
+<script src='https://unpkg.com/jquery.terminal/js/less.js'></script>
+<script src='https://unpkg.com/jquery.terminal/js/prism.js'></script>
+<script src='https://unpkg.com/browserfs@1.4.3/dist/browserfs.js'></script>
+<script src='https://unpkg.com/jsvi@0.1.0/vi.js'></script><script  src="./script.js"></script>
+
 </body>
 </html>
-
-<script>
-$('body').terminal({
-    help: function(what) {
-        this.echo('Help : Displays this prompt');
-    }
-}, {
-    greetings: 'My First Output'
-}, {
-    greetings2: 'My Second Output'
-});
-</script>
