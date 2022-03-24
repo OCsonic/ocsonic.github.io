@@ -1,3 +1,9 @@
+function httpGet(getUrl) {
+  let XMLHttpReq = new XMLHttpRequest();
+  XMLHttpReq.open("GET", getUrl, false);
+  XMLHttpReq.send(null);
+  return XMLHttpReq.responseText;
+}
 fetch('root.zip').then(function(response) { return response.arrayBuffer(); }).then(function(zipData) {
   var Buffer = BrowserFS.BFSRequire('buffer').Buffer;
 BrowserFS.configure({ fs: "MountableFileSystem", options: {
