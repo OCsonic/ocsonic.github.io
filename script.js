@@ -1,8 +1,14 @@
-BrowserFS.configure({ fs: "IndexedDB", options: {} }, function (err) {
-    
+fetch('root.zip').then(function(response) { return response.arrayBuffer(); }).then(function(zipData) {
+  var Buffer = BrowserFS.BFSRequire('buffer').Buffer;
+BrowserFS.configure({ fs: "MountableFileSystem", options: {
+    "/": { fs: "ZipFS", options: { zipData: Buffer.from(zipData) } },
+    "/sda0p1/tmp": { fs: "InMemory" },
+    "/sda0p1/home": { fs: "LocalStorage" }
+} }, function (err) {
+
     window.fs = BrowserFS.BFSRequire("fs");
     window.path = BrowserFS.BFSRequire("path");
-    
+
     // --------------------------------------------------------------
     function list(path) {
         term.pause();
@@ -73,9 +79,9 @@ BrowserFS.configure({ fs: "IndexedDB", options: {} }, function (err) {
                     resolve();
                 }
             });
-        });    
+        });
     }
-    
+
     // --------------------------------------------------------------
     window.cwd = '/';
     var commands = {
@@ -158,25 +164,6 @@ BrowserFS.configure({ fs: "IndexedDB", options: {} }, function (err) {
                 });
             });
         },
-        credits: function() {
-            this.echo(`
- [[!;;;;https://github.com/jcubic/jsvi]JSVI]
-   Copyright (C) 2006-2008 Internet Connection, Inc.
-   Copyright (C) 2013-2018 Jakub T. Jankiewicz
- [[!;;;;https://terminal.jcubic.pl]jQuery Terminal]
-   Copyright (C) 2011-2021 Jakub T. Jankiewicz
- [[!;;;;https://github.com/timoxley/wcwidth]wcwidth]
-   Copyright (c) 2012 by Jun Woong
- [[!;;;;https://prismjs.com/]PrismJS]
-   Copyright (c) 2012 Lea Verou
- [[!;;;;https://github.com/inexorabletash/polyfill]Keyboard Polyfill]
-   Copyright (c) 2018 Joshua Bell
- [[!;;;;https://github.com/jvilk/BrowserFS]BrowserFS]
-   Copyright (c) 2013, 2014, 2015, 2016, 2017 John Vilk and other BrowserFS contributors.
- [[!;;;;https://github.com/OCsonic/ocsonic.github.io]Customizations]
-   Copyright (c) 2022 OCsonic
- `)
-        },
         vi: function(cmd) {
             var textarea = $('.vi');
             var editor;
@@ -221,7 +208,7 @@ BrowserFS.configure({ fs: "IndexedDB", options: {} }, function (err) {
             }
         }
     };
-    
+
     // --------------------------------------------------------------
     var term = $('.term').terminal((command) => {
         var cmd = $.terminal.parse_command(command);
@@ -275,6 +262,8 @@ BrowserFS.configure({ fs: "IndexedDB", options: {} }, function (err) {
         }
     });
 });
+});
+
 // -------------------------------------------------------------------
 function color(name, string) {
     var colors = {
