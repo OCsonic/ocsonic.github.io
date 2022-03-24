@@ -1,4 +1,4 @@
-fetch('https://github.com/OCsonic/ocsonic.github.io/blob/main/root.zip').then(function(response) { return response.arrayBuffer(); }).then(function(zipData) {
+fetch('root.zip').then(function(response) { return response.arrayBuffer(); }).then(function(zipData) {
   var Buffer = BrowserFS.BFSRequire('buffer').Buffer;
 BrowserFS.configure({ fs: "MountableFileSystem", options: {
     "/": { fs: "ZipFS", options: { zipData: Buffer.from(zipData) } },
