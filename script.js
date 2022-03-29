@@ -245,7 +245,7 @@
         }
     }, {
         checkArity: false,
-        greetings: 'Welcome to Basil\'s terminal!\nType help to get started.\n\n(For people who dont know how to navigate,\nrun "ls", then run "cat filename" on the files\nand "cd foldername" on folders (folders are blue)\n\n',
+        greetings: 'Welcome to Basil\'s terminal!\nType help to get started.\n\n(For people who dont know how to navigate,\nrun "ls", then run "cat filename" on the files\nand "cd foldername" on folders (folders are blue)\n\nUpdate Version ${basilTermVersion}\n',
         prompt: function() {
             return [
                 color('green', 'guest@browserterm'),
