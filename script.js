@@ -179,7 +179,11 @@
                                 term.error(`${path_name} is directory`);
                             }
                         } else if (stat.isFile()) {
-                            fs.unlink(path_name);
+                            if (options.match(/r/)) {
+                                term.error(`${path_name} is file`);
+                            } else {
+                                fs.unlink(path_name);
+                            }
                         } else {
                             term.error(`${path_name} is invalid`)
                         }
