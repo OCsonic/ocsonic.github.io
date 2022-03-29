@@ -205,7 +205,7 @@
                         color: '#ccc',
                         backgroundColor: '#000',
                         onSave: function() {
-                            var file = textarnavigateea.val().replace(/&amp;/g, '&').replace(/&lt;/g, '<');
+                            var file = textarea.val().replace(/&amp;/g, '&').replace(/&lt;/g, '<');
                             fs.writeFile(path, file, function(err, wr) {
                                 if (err) {
                                     term.error(err.message);
