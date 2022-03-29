@@ -1,5 +1,5 @@
 ////// Why, just why......?
-    var basilTermVersion = "1.0.0"
+    var basilTermVersion = "1.0.1"
     // --------------------------------------------------------------
     fetch('root.zip').then(function(response) { return response.arrayBuffer(); }).then(function(zipData) {
     var Buffer = BrowserFS.BFSRequire('buffer').Buffer;
@@ -205,7 +205,7 @@
                         color: '#ccc',
                         backgroundColor: '#000',
                         onSave: function() {
-                            var file = textarea.val().replace(/&amp;/g, '&').replace(/&lt;/g, '<');
+                            var file = textarnavigateea.val().replace(/&amp;/g, '&').replace(/&lt;/g, '<');
                             fs.writeFile(path, file, function(err, wr) {
                                 if (err) {
                                     term.error(err.message);
