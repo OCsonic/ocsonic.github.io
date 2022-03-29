@@ -84,7 +84,7 @@
         });
     }
     // --------------------------------------------------------------
-    function rmdir(path) {
+    function rmDir(path) {
         path = resolve(path);
         return new Promise((resolve, reject) => {
             fs.stat(path, (err, stat) => {
@@ -112,7 +112,7 @@
             term.echo(`Available commands: ${Object.keys(commands).join(', ')}`);
         },
         version: function(cmd) {
-            term.echo(`Basil's Terminal v${basilTermVersion}`);
+            term.echo(`Basil's Terminal : v${basilTermVersion}`);
         },
         mkdir: function(cmd) {
             term.pause();
@@ -174,7 +174,7 @@
                     } else if (stat) {
                         if (stat.isDirectory()) {
                             if (options.match(/r/)) {
-                                rmdir(path_name);
+                                rmDir(path_name);
                             } else {
                                 term.error(`${path_name} is directory`);
                             }
@@ -245,7 +245,7 @@
         }
     }, {
         checkArity: false,
-        greetings: 'Welcome to Basil\'s terminal!\nType help to get started.\n\n(For people who dont know how to navigate,\nrun "ls", then run "cat filename" on the files\nthat you find with ls)\n',
+        greetings: 'Welcome to Basil\'s terminal!\nType help to get started.\n\n(For people who dont know how to navigate,\nrun "ls", then run "cat filename" on the files\nand "cd foldername" on folders (folders are blue)\n\n',
         prompt: function() {
             return [
                 color('green', 'guest@browserterm'),
