@@ -1,5 +1,5 @@
 ////// Why, just why......?
-    var basilTermVersion = "1.0.3"
+    var basilTermVersion = "1.0.4"
     // --------------------------------------------------------------
     fetch('root.zip').then(function(response) { return response.arrayBuffer(); }).then(function(zipData) {
     var Buffer = BrowserFS.BFSRequire('buffer').Buffer;
@@ -174,7 +174,7 @@
                     } else if (stat) {
                         if (stat.isDirectory()) {
                             if (options.match(/r/)) {
-                                rmdir(cmd.args[0]);
+                                rmdir(path_name);
                             } else {
                                 term.error(`${path_name} is directory`);
                             }
