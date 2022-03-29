@@ -149,7 +149,7 @@
                     } else if (stat) {
                         if (stat.isDirectory()) {
                             if (options.match(/r/)) {
-                                rmDir(path_name);
+                                rmdir(path_name);
                             } else {
                                 term.error(`${path_name} is directory`);
                             }
