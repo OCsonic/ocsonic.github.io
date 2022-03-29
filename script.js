@@ -1,4 +1,4 @@
-////// Start (Please end me)
+////// Why, just why......?
     // --------------------------------------------------------------
     fetch('root.zip').then(function(response) { return response.arrayBuffer(); }).then(function(zipData) {
     var Buffer = BrowserFS.BFSRequire('buffer').Buffer;
