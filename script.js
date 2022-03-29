@@ -112,7 +112,7 @@
             term.echo(`Available commands: ${Object.keys(commands).join(', ')}`);
         },
         version: function(cmd) {
-            term.echo(`Basil's Terminal ${basilTermVersion}`);
+            term.echo(`Basil's Terminal v${basilTermVersion}`);
         },
         mkdir: function(cmd) {
             term.pause();
