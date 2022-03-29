@@ -245,7 +245,7 @@
         }
     }, {
         checkArity: false,
-        greetings: 'Welcome to my terminal!\nType help to get started.\n\n(For people who dont know how,\nrun "ls", then run "cat filename"\non the files that you find with ls)\n',
+        greetings: 'Welcome to Basil\'s terminal!\nType help to get started.\n\n(For people who dont know how to navigate,\nrun "ls", then run "cat filename" on the files\nthat you find with ls)\n',
         prompt: function() {
             return [
                 color('green', 'guest@browserterm'),
