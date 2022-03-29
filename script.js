@@ -84,7 +84,7 @@
         });
     }
     // --------------------------------------------------------------
-    function rmDir(path) {
+    function rmdir(path) {
         path = resolve(path);
         return new Promise((resolve, reject) => {
             fs.stat(path, (err, stat) => {
@@ -174,7 +174,8 @@
                     } else if (stat) {
                         if (stat.isDirectory()) {
                             if (options.match(/r/)) {
-                                rmDir(path_name);
+                                term.pause();
+                                rmdir(cmd.args[0]).then(term.resume);
                             } else {
                                 term.error(`${path_name} is directory`);
                             }
@@ -245,7 +246,7 @@
         }
     }, {
         checkArity: false,
-        greetings: 'Welcome to Basil\'s terminal!\nType help to get started.\n\n(For people who dont know how to navigate,\nrun "ls", then run "cat filename" on the files\nand "cd foldername" on folders (folders are blue)\n\n',
+        greetings: 'Welcome to Basil\'s terminal!\nType help to get started.\n\n(For people who dont know how to navigate,\nrun "ls", then run "cat filename" on the files\nand "cd foldername" on folders (folders are blue)\n',
         prompt: function() {
             return [
                 color('green', 'guest@browserterm'),
