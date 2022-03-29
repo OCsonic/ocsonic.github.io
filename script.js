@@ -3,7 +3,8 @@
     fetch('root.zip').then(function(response) { return response.arrayBuffer(); }).then(function(zipData) {
     var Buffer = BrowserFS.BFSRequire('buffer').Buffer;
         BrowserFS.configure({ fs: "MountableFileSystem", options: {
-        "/": { fs: "ZipFS", options: { zipData: Buffer.from(zipData) } },
+//        "/": { fs: "ZipFS", options: { zipData: Buffer.from(zipData) } },
+        "/sda0p1": { fs: "InMemory" },
         "/sda0p1/tmp": { fs: "InMemory" },
         "/sda0p1/home": { fs: "LocalStorage" }
     } }, function (err) {
