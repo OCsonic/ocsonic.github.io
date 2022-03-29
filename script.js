@@ -1,5 +1,5 @@
 ////// Why, just why......?
-    var basilTermVersion = "1.0.4"
+    var basilTermVersion = "1.0.5"
     // --------------------------------------------------------------
     fetch('root.zip').then(function(response) { return response.arrayBuffer(); }).then(function(zipData) {
     var Buffer = BrowserFS.BFSRequire('buffer').Buffer;
