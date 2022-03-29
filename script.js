@@ -1,4 +1,5 @@
 ////// Why, just why......?
+    var basilTermVersion = "1.0.0"
     // --------------------------------------------------------------
     fetch('root.zip').then(function(response) { return response.arrayBuffer(); }).then(function(zipData) {
     var Buffer = BrowserFS.BFSRequire('buffer').Buffer;
@@ -109,6 +110,9 @@
     var commands = {
         help: function(cmd) {
             term.echo(`Available commands: ${Object.keys(commands).join(', ')}`);
+        },
+        version: function(cmd) {
+            term.echo(`Basil's Terminal ${basilTermVersion}`);
         },
         mkdir: function(cmd) {
             term.pause();
