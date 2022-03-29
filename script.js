@@ -174,8 +174,7 @@
                     } else if (stat) {
                         if (stat.isDirectory()) {
                             if (options.match(/r/)) {
-                                term.pause();
-                                rmdir(cmd.args[0]).then(term.resume);
+                                rmdir(cmd.args[0]);
                             } else {
                                 term.error(`${path_name} is directory`);
                             }
