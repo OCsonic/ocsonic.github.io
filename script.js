@@ -82,6 +82,27 @@
             });
         });
     }
+    // --------------------------------------------------------------
+    function rmdir(path) {
+        path = resolve(path);
+        return new Promise((resolve, reject) => {
+            fs.stat(path, (err, stat) => {
+                if (err) {
+                    fs.rmdir(path, function(err) {
+                        if (err) {
+                            reject(err.message);
+                        } else {
+                            resolve();
+                        }
+                    });
+                } else if (stat.isFile()) {
+                    reject(`${path} is file`);
+                } else {
+                    resolve();
+                }
+            });
+        });
+    }
 
     // --------------------------------------------------------------
     window.cwd = '/';
