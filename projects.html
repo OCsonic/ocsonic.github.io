@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Basil's Site – Projects</title>
+  <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="">
+</head>
+<body>
+<div class="page">
+<header>
+<div class="title">
+<h1 class="title">Projects</h1>
+</div>
+<ul>
+<li><a href="/">Home 🏠</a></li>
+<li><a href="/projects.html">Projects 💜</a></li>
+<li><a href="/heroes.html">Cool People ‼️</a></li>
+<li><strong><a href="https://codeberg.org/BasilBasil">Codeberg 🧊</a></strong></li>
+<li><strong><a href="/contact.html">Contact 📱</a></strong></li>
+</ul>
+<hr/>
+</header>
+<nav id="TOC">
+<h1>Navigate this page:</h1>
+<ul>
+<li><a href="#endless-projects" id="toc-endless-projects">Endless
+Projects</a>
+<ul>
+<li><a href="#basil-overlay" id="toc-basil-overlay">Basil
+Overlay</a></li>
+<li><a href="#etools" id="toc-etools">Etools</a></li>
+<li><a href="#util-basil" id="toc-util-basil">util-basil</a></li>
+<li><a href="#nyaofetch" id="toc-nyaofetch">nyaofetch</a></li>
+</ul></li>
+<li><a href="#active-projects" id="toc-active-projects">Active
+Projects</a>
+<ul>
+<li><a href="#charon" id="toc-charon">Charon</a></li>
+<li><a href="#sudoas" id="toc-sudoas">sudoas</a></li>
+<li><a href="#idlebox" id="toc-idlebox">idlebox</a></li>
+<li><a href="#container-manager-name-tbd"
+id="toc-container-manager-name-tbd">container manager (name
+TBD)</a></li>
+</ul></li>
+<li><a href="#finished-projects" id="toc-finished-projects">Finished
+Projects</a>
+<ul>
+<li><a href="#boltauthd" id="toc-boltauthd">boltauthd</a></li>
+</ul></li>
+</ul>
+</nav>
+<div class="pagetext">
+<p><a href="./">Return to index</a></p>
+<div class="h"><h1 id="endless-projects">Endless Projects</h1><a aria-hidden="true" href="#endless-projects">[link]</a></div>
+<p>These projects don’t have some end-goal, so I will continue to add
+ontop of them for as-long as I find it either useful or enjoyable</p>
+<h2 id="basil-overlay"><a
+href="https://codeberg.org/BasilBasil/basil-overlay">Basil
+Overlay</a></h2>
+<p>I have a Gentoo overlay I’m working on, the main purpose of it is to
+package my own software, software that either isn’t packaged anywhere
+else, and software that is packaged poorly/missing features in other
+overlays.</p>
+<h2 id="etools"><a
+href="https://codeberg.org/BasilBasil/etools">Etools</a></h2>
+<p>Etools is another Gentoo-centric project I’ve been working on, It’s a
+bash script that contains a bunch of small applets (kind of like how
+busybox works) meant to speed up a lot of tasks on Gentoo.</p>
+<p>It can help with things such as enabling repositories, listing which
+package a specific use flag is enabled on, precalculating dependencies
+for solving update conflicts, providing the time since your last emerge
+sync in a customizable format, and finding out what cpu flags are
+enabled by gcc when using <code>-march=native</code> so that you can
+migrate to a distcc setup while keeping all your CPU optimizations
+enabled.</p>
+<h2 id="util-basil"><a
+href="https://codeberg.org/BasilBasil/util-basil">util-basil</a></h2>
+<p>util-basil started off as a few standalone utilities that I was
+writing with the intention of speeding up very small tasks like getting
+the difference between two dates, counting down, and moving a file to
+~/.local/bin/ and marking it as executable.</p>
+<p>Nothing in util-basil is anything remarkable, <del>honestly some of
+the code in there is pretty embarassing</del> but it’s just a bunch of
+stuff I designed to be good enough to get the job done.</p>
+<p>Some of the tools in util-basil are required for some of my other
+programs to work to avoid rewriting the same code multiple times.</p>
+<h2 id="nyaofetch"><a
+href="https://codeberg.org/BasilBasil/nyaofetch">nyaofetch</a></h2>
+<p>Nyaofetch is a project I created for fun, it utilizes one of my
+already-complete projects called boltauthd, the goal of nyaofetch is to
+have a more featureful UI with the ability to distinguish dGPUs and
+eGPUs and allow listing a specific GPU using a index in an array.</p>
+<p>Most importantly I wanted to implement it such that none of these
+features made it slower than neofetch so I try to cache information
+where possible and use more performant ways of fetching information.</p>
+<div class="h"><h1 id="active-projects">Active Projects</h1><a aria-hidden="true" href="#active-projects">[link]</a></div>
+<p>Here’s a list of my ongoing projects!</p>
+<h2 id="charon"><a
+href="https://codeberg.org/BasilBasil/Charon">Charon</a></h2>
+<p>Charon is a project I started a while back, originally with the goal
+to create a small tool for switching between graphics cards for Vulkan
+and and OpenGL programs, it quickly expanded because I had to test that
+it was working and realized that checking the current GPU for multiple
+APIs at once was annoying.</p>
+<p>So I set out to create a neat user interface for viewing the GPU that
+is in use for every major graphics API.</p>
+<p>Now the toolset is comprised on 3 parts: one for listing connected
+GPUs and GPU kernel modules (asphodel), one for setting the GPU
+(elysium), and one for displaying what GPU is in use (tartarus).</p>
+<h2 id="sudoas"><a
+href="https://codeberg.org/BasilBasil/sudoas">sudoas</a></h2>
+<p>Sudoas is a project I’m working on on-and-off, it serves as a wrapper
+for doas to mimick the existence of sudo, with the end-goal of being 1:1
+compatible with sudo command line flags (and perhaps even others in the
+future).</p>
+<div class="h"><h2 id="idlebox">idlebox</h2><a aria-hidden="true" href="#idlebox">[link]</a></div>
+<p>Idlebox is one of the larger projects I’m currently working on, the
+goal is to recreate all of the GNU Coreutils using pure POSIX shell with
+no external dependencies. (Yes, this includes recreating a bash
+environment)</p>
+<p>I haven’t yet gotten the project to a state that I’m happy with, but
+I plan to share it once it gets to that point!</p>
+<div class="h"><h2 id="container-manager-name-tbd">container manager (name TBD)</h2><a aria-hidden="true" href="#container-manager-name-tbd">[link]</a></div>
+<p>This project is currently undergoing a full rewrite, the goal of the
+program is to make it easy to quickly deploy a container install of any
+distro with your own customizations, simmilar to how docker works but
+compatible with multiple tools such as chroot, proot, unshare,
+newuidmap, newgidmap, and possibly others to make it hopefully as
+portable as possible.</p>
+<p>My hopes are to get it running out of the box on most linux distros
+both with and without root access.</p>
+<p>When the rewrite of the project is done and I’m happy with the level
+of modularity is has then I’ll be sharing this one on codeberg aswell!
+<sup>-</sup></p>
+<div class="h"><h1 id="finished-projects">Finished Projects</h1><a aria-hidden="true" href="#finished-projects">[link]</a></div>
+<p>These are projects that already reached feature-completion.</p>
+<h2 id="boltauthd"><a
+href="https://codeberg.org/BasilBasil/boltauthd">boltauthd</a></h2>
+<p>Boltauthd is a project that I originally created for use with
+Nyaofetch, with the purpose of tracking when PCIe devices are plugged in
+to compare them to a list that was cached when the system booted up so
+that it can correlate a ThunderBolt/USB4 device ID to the PCI ID.</p>
+<p>The purpose of distinguishing them was to be able to figure out which
+PCI display adapters are external and which ones are internal so that I
+could store external GPUs in a separate array index from internal GPUs
+to improve the customization of Nyaofetch’s output.</p>
+<p>I’m really happy with how it turned out in the end, it was certainly
+a bit janky in the methodology but the results are very consistent even
+when rapidly hotplugging devices.</p>
+<p>Markdown file for this page: <a
+href="https://basilbasil.codeberg.page/projects.md"
+class="uri">https://basilbasil.codeberg.page/projects.md</a></p>
+<p><a href="/sitemap.html">Site map</a></p>
+<p>This HTML page was generated by the <a
+href="https://untitled.vimuser.org/">Untitled Static Site
+Generator</a>.</p>
+</div>
+</div>
+</body>
+</html>
