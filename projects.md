@@ -35,6 +35,16 @@ Active Projects
 ===============
 Here's a list of my ongoing projects!
 
+[eplug](https://codeberg.org/BasilBasil/eplug)
+-----
+eplug is a project I started after migrating to using Gentoo Linux alongside Bedrock Linux, the goal of the project is to allow the easy addition of custom configuration directories in the portage configuration directory.
+
+Initially the project was called ehook and just added a directory for defining package hooks for any ebuild phase, but after migrating to bedrock and attempting to make global configurations with it I realized the limitations that the current structure imposed.
+
+So instead of simply changing the configuration structure again I decided to write a plugin manager so I could avoid rewriting large amounts of the same code for each custom portage bashrc hook.
+
+This project is still in early development but it's one of my favorites to work on at the moment.
+
 [Charon](https://codeberg.org/BasilBasil/Charon)
 ------
 Charon is a project I started a while back, originally with the goal to create a small tool for switching between graphics cards for Vulkan and and OpenGL programs, it quickly expanded because I had to test that it was working and realized that checking the current GPU for multiple APIs at once was annoying.
